@@ -1,0 +1,19 @@
+- name: "Install dependancy"
+  yum:
+    name: epel-release
+    state: latest
+
+- name: "Install nginx"
+  yum:
+    name: nginx
+    state: latest
+
+- name: "Enbale nginx"
+  systemd:
+    name: nginx
+    enabled: yes
+
+- name: "start nginx"
+  systemd:
+    name: nginx
+    state: started

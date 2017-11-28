@@ -1,0 +1,10 @@
+---
+# tasks file for nginx
+- name: "Install Kibana in RedHat systems"
+  include: nginx-{{ redhat_system }}.yml
+  when: ansible_os_family == "RedHat"
+
+- name: "Install Kibana in Debian Systems"
+  include: nginx-{{ debian_system }}.yml
+  when: ansible_os_family == "Debian"
+
